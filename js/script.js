@@ -1,6 +1,6 @@
 window.onload = function () {
   // Get about data
-  fetch("../data/homeabout.json")
+  fetch("/data/homeabout.json")
     .then((response) => response.json())
     .then((data) => {
       new Typed(".typing", {
@@ -36,7 +36,7 @@ window.onload = function () {
       `;
 
       // Get education data
-      fetch("../data/education.json")
+      fetch("/data/education.json")
         .then((response) => response.json())
         .then((data) => {
           const timeline = document.getElementById("education");
@@ -113,7 +113,7 @@ window.onload = function () {
     .catch((error) => console.error("Error loading about data:", error));
 
   // Get skills data
-  fetch("../data/skills.json")
+  fetch("/data/skills.json")
     .then((response) => response.json())
     .then((data) => {
       const skillsContainer = document.getElementById("skill-list");
@@ -128,7 +128,7 @@ window.onload = function () {
     .catch((error) => console.error("Error loading skills data:", error));
 
   // Get Certifications data
-  fetch("../data/certifications.json")
+  fetch("/data/certifications.json")
     .then((response) => response.json())
     .then((data) => {
       const certifications = document.getElementById("cert-list");
@@ -160,7 +160,7 @@ window.onload = function () {
 
   Promise.all(
     files.map((file) =>
-      fetch(`../data/experience/${file}`).then((res) => res.text())
+      fetch(`/data/experience/${file}`).then((res) => res.text())
     )
   ).then((allData) => {
     experienceElement.innerHTML = allData.join("");
