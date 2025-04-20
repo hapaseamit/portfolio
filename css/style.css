@@ -7,8 +7,15 @@
   --text-black-700: #504e70;
   --angle: 0deg;
 }
-body.dark {
+/* body.darkold {
   --bg-black-900: #151515;
+  --bg-black-100: #222222;
+  --bg-black-50: #393939;
+  --text-black-900: #ffffff;
+  --text-black-700: #e9e9e9;
+} */
+body.dark {
+  --bg-black-900: #000000;
   --bg-black-100: #222222;
   --bg-black-50: #393939;
   --text-black-900: #ffffff;
@@ -18,6 +25,7 @@ body {
   line-height: 1.5;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
+  background: black;
 }
 
 * {
