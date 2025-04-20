@@ -1,0 +1,29 @@
+{
+  "certifications": [
+    {
+      "title": "RED HAT CERTIFIED SYSTEM ADMINISTRATOR",
+      "validity": "Dec 2018 - Dec 2021",
+      "url": "images/certificates/RHCE.png"
+    },
+    {
+      "title": "RED HAT CERTIFIED ENGINEER",
+      "validity": "Dec 2019 - Dec 2022",
+      "url": "images/certificates/RHCE.png"
+    },
+    {
+      "title": "REACT - THE COMPLETE GUIDE",
+      "validity": "Apr 2025 - NA",
+      "url": "images/certificates/Udemy-React.jpg"
+    },
+    {
+      "title": "Python Django - The Practical Guide ",
+      "validity": "Apr 2025 - NA",
+      "url": "images/certificates/Udemy-Django.jpg"
+    },
+    {
+      "title": "GO - THE COMPLETE GUIDE",
+      "validity": "Apr 2025 - NA",
+      "url": "images/certificates/Go.jpg"
+    }
+  ]
+}
