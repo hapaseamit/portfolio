@@ -245,6 +245,7 @@ ul.nav a {
 .aside .nav li:hover {
   /* transform: scale(1.1); */
   border-bottom: 1px solid #56534de2;
+  color: var(--skin-color);
 }
 
 .aside .nav li a {
@@ -260,9 +261,9 @@ ul.nav a {
 
 .aside .nav li a.active {
   color: var(--skin-color);
-  border-bottom: 2px solid var(--skin-color);
-  color: #c7c2ba;
-  border-bottom: 2px solid #837a6c;
+  /* border-bottom: 2px solid var(--skin-color); */
+  /* color: #c7c2ba; */
+  border-bottom: 1px solid #837a6c;
 }
 
 .aside .nav li a i {
@@ -297,8 +298,7 @@ h3.hello span {
   font-family: "Funnel Display", sans-serif;
   font-weight: 600;
   font-size: 50px;
-  /* color: var(--skin-color); */
-  color: #c9aa85;
+  color: var(--skin-color);
 }
 h3.my-profession {
   font-size: 30px;
@@ -326,8 +326,6 @@ h3.my-profession {
   width: 80px;
   border-bottom: 10px solid var(--skin-color);
   border-right: 10px solid var(--skin-color);
-  /* border-bottom: 10px solid #837a6c;
-  border-right: 10px solid #837a6c; */
   /* right: 5px; */
   right: 1vw;
   bottom: -40px;
@@ -339,8 +337,6 @@ h3.my-profession {
   width: 80px;
   border-top: 10px solid var(--skin-color);
   border-left: 10px solid var(--skin-color);
-  /* border-top: 10px solid #837a6c;
-  border-left: 10px solid #837a6c; */
   /* left: -10px; */
   left: 1vw;
   top: -40px;
