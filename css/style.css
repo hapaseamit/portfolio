@@ -764,7 +764,7 @@ h3.my-profession {
 
 .certifications .certifications-item .certifications-item-inner img {
   border-radius: 10px;
-  border: 2px solid var(--skin-color);
+  border: 1px solid var(--skin-color);
 }
 
 .certifications .certifications-item .certifications-item-inner p {
