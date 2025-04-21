@@ -327,7 +327,7 @@ h3.my-profession {
   margin: auto;
   border-radius: 5px;
   height: 400px;
-  /* border: 2px solid var(--skin-color); */
+  border: 2px solid var(--skin-color);
 }
 /* home section social icons experiment start */
 
