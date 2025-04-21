@@ -47,7 +47,6 @@ ul.nav a {
 }
 .section {
   background: var(--bg-black-900);
-  background: var(--bg-black-100);
   min-height: 100vh;
   display: block;
   padding: 0 30px;
