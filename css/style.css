@@ -112,6 +112,7 @@ ul.nav a {
   color: var(--text-black-900);
   font-weight: 700;
   position: relative;
+  text-shadow: 0 0 10px rgb(171 131 90);
 }
 .section-title h2::before {
   content: "";
@@ -542,12 +543,14 @@ h3.my-profession {
   max-width: 100%;
 }
 .about .about-content .timeline {
-  background-color: var(--bg-black-100);
+  /* background-color: var(--bg-black-100); */
+  background-color: rgba(0, 0, 0, 0.069);
   padding: 30px 15px;
   border: 1px solid var(--bg-black-50);
   border-radius: 10px;
   width: 100%;
   position: relative;
+  text-shadow: 0 0 10px rgb(171 131 90);
 }
 
 .about .about-content .timeline .timeline-item {
@@ -618,12 +621,14 @@ h3.my-profession {
 }
 
 .workexperience .workexperience-content .timeline {
-  background-color: var(--bg-black-100);
+  /* background-color: var(--bg-black-100); */
+  background-color: rgba(0, 0, 0, 0.069);
   padding: 30px 15px;
   border: 1px solid var(--bg-black-50);
   border-radius: 10px;
   width: 100%;
   position: relative;
+  text-shadow: 0 0 10px rgb(171 131 90);
 }
 
 .workexperience .workexperience-content .timeline .timeline-item {
@@ -723,23 +728,26 @@ h3.my-profession {
   /* border-radius: 10%; */
   color: var(--text-black-700);
   color: var(--skin-color);
+  text-shadow: 0 0 10px rgb(171 131 90);
   padding: 8px 12px;
   /* border-radius: 6px; */
   font-weight: bold;
   /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
   transition: all 0.2s ease;
-  background-color: var(--bg-black-100);
+  /* background-color: var(--bg-black-100); */
+  background-color: rgba(0, 0, 0, 0.069);
   /* border: 1px solid var(--skin-color); */
   border-radius: 10px;
   /* box-shadow: 0 0 20px rgba(48, 46, 77, 0.15); */
   text-align: center;
   border: 1px solid var(--bg-black-900);
+  border: 3px solid transparent;
 }
 
 .skills-grid li:hover {
   transform: scale(1.05);
   color: var(--skin-color);
-  border: 1px solid var(--bg-black-50);
+  border: 3px solid var(--bg-black-50);
 }
 
 /* @media (max-width: 768px) {
@@ -772,6 +780,8 @@ h3.my-profession {
   text-align: center;
   /* box-shadow: 0 0 20px rgba(48, 46, 77, 0.15); */
   transition: all 0.3s ease;
+  text-shadow: 0 0 10px rgb(171 131 90);
+  background-color: rgba(0, 0, 0, 0.069);
 }
 .certifications .certifications-item .certifications-item-inner:hover {
   box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
