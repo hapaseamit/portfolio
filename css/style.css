@@ -12,7 +12,8 @@
   --text-black-700: #aca59a;
   --text-shadow-10: 0 0 10px rgba(255, 241, 206, 0);
   /* --text-shadow-20: 0 0 20px rgb(171 131 90); */
-  --text-shadow-20: 0 0 20px rgba(235, 201, 113, 0);
+  --text-shadow-20: 0 0 20px rgba(235, 201, 113, 0.317);
+  /* --text-shadow-20: 0 0 20px rgba(99, 99, 99, 0.76); */
   --angle: 0deg;
 }
 /* body.darkold {
@@ -159,8 +160,8 @@ ul.nav a {
   background: var(--skin-color);
   transition: all 0.3s ease;
   line-height: 1; /* Prevent line-height from affecting height */
-  box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
-  box-shadow: 0 0 20px rgba(99, 99, 99, 0.76);
+  /* box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+  box-shadow: 0 0 20px rgba(99, 99, 99, 0.76); */
 }
 .btn:hover {
   transform: scale(1.05);
@@ -173,6 +174,7 @@ ul.nav a {
 .aside {
   width: 270px;
   /* background: var(--bg-black-100); */
+  background-color: rgba(0, 0, 0, 0.069);
   position: fixed;
   left: 0;
   top: 0;
@@ -285,6 +287,7 @@ ul.nav a {
   /* border-bottom: 1px solid var(--bg-black-50); */
   /* border-bottom: 1px solid #56534de2; */
   color: var(--text-black-900);
+  text-shadow: var(--text-shadow-10);
   /* color: #c7c2ba; */
   padding: 5px 15px;
 }
@@ -330,9 +333,9 @@ h3.hello span {
   font-weight: 600;
   font-size: 50px;
   color: var(--skin-color);
-  /* text-shadow: 0 0 20px rgba(131, 130, 130, 0.76); */
-  text-shadow: 0 0 20px rgba(255, 241, 206, 0.435);
-  text-shadow: var(--text-shadow-20);
+  /* text-shadow: 0 0 20px rgba(131, 130, 130, 0.76);
+  text-shadow: 0 0 20px rgba(255, 241, 206, 0.435); */
+  /* text-shadow: var(--text-shadow-20); */
 }
 h3.my-profession {
   font-size: 30px;
@@ -379,7 +382,8 @@ h3.my-profession {
   margin: auto;
   border-radius: 5px;
   height: 400px;
-  border: 2px solid #837a6c;
+  border: 1px solid #837a6c;
+  /* border: 1px solid var(--skin-color); */
   box-shadow: 0 0 20px rgba(99, 99, 99, 0.76);
 }
 /* home section social icons experiment start */
@@ -550,6 +554,8 @@ h3.my-profession {
 .about .about-content .timeline {
   /* background-color: var(--bg-black-100); */
   background-color: rgba(0, 0, 0, 0.069);
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0.9px);
   padding: 30px 15px;
   border: 1px solid var(--bg-black-50);
   border-radius: 10px;
@@ -629,6 +635,8 @@ h3.my-profession {
 .workexperience .workexperience-content .timeline {
   /* background-color: var(--bg-black-100); */
   background-color: rgba(0, 0, 0, 0.069);
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0.9px);
   padding: 30px 15px;
   border: 1px solid var(--bg-black-50);
   border-radius: 10px;
@@ -744,6 +752,8 @@ h3.my-profession {
   transition: all 0.2s ease;
   /* background-color: var(--bg-black-100); */
   background-color: rgba(0, 0, 0, 0.069);
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0.9px);
   /* border: 1px solid var(--skin-color); */
   border-radius: 10px;
   /* box-shadow: 0 0 20px rgba(48, 46, 77, 0.15); */
@@ -791,6 +801,8 @@ h3.my-profession {
   text-shadow: 0 0 10px rgb(171 131 90);
   text-shadow: var(--text-shadow-10);
   background-color: rgba(0, 0, 0, 0.069);
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0.9px);
 }
 .certifications .certifications-item .certifications-item-inner:hover {
   box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
