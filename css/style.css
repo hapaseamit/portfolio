@@ -10,6 +10,9 @@
   --text-black-900: #d1c9bf;
   /* --text-black-700: #504e70; */
   --text-black-700: #aca59a;
+  --text-shadow-10: 0 0 10px rgba(255, 241, 206, 0);
+  /* --text-shadow-20: 0 0 20px rgb(171 131 90); */
+  --text-shadow-20: 0 0 20px rgba(235, 201, 113, 0);
   --angle: 0deg;
 }
 /* body.darkold {
@@ -112,7 +115,7 @@ ul.nav a {
   color: var(--text-black-900);
   font-weight: 700;
   position: relative;
-  text-shadow: 0 0 10px rgb(171 131 90);
+  text-shadow: var(--text-shadow-10);
 }
 .section-title h2::before {
   content: "";
@@ -195,7 +198,8 @@ ul.nav a {
   font-size: 30px;
   letter-spacing: 5px;
   position: relative;
-  text-shadow: 0 0 20px rgba(131, 130, 130, 0.892);
+  /* text-shadow: 0 0 20px rgba(131, 130, 130, 0.892); */
+  text-shadow: var(--text-shadow-20);
 }
 .aside .logo a span {
   font-family: "Funnel Display", sans-serif;
@@ -290,7 +294,7 @@ ul.nav a {
   /* border-bottom: 2px solid var(--skin-color); */
   /* color: #c7c2ba; */
   /* border-bottom: 1px solid #837a6c; */
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.628);
+  text-shadow: var(--text-shadow-20);
 }
 
 .aside .nav li a i {
@@ -328,6 +332,7 @@ h3.hello span {
   color: var(--skin-color);
   /* text-shadow: 0 0 20px rgba(131, 130, 130, 0.76); */
   text-shadow: 0 0 20px rgba(255, 241, 206, 0.435);
+  text-shadow: var(--text-shadow-20);
 }
 h3.my-profession {
   font-size: 30px;
@@ -551,6 +556,7 @@ h3.my-profession {
   width: 100%;
   position: relative;
   text-shadow: 0 0 10px rgb(171 131 90);
+  text-shadow: var(--text-shadow-10);
 }
 
 .about .about-content .timeline .timeline-item {
@@ -629,6 +635,7 @@ h3.my-profession {
   width: 100%;
   position: relative;
   text-shadow: 0 0 10px rgb(171 131 90);
+  text-shadow: var(--text-shadow-10);
 }
 
 .workexperience .workexperience-content .timeline .timeline-item {
@@ -729,6 +736,7 @@ h3.my-profession {
   color: var(--text-black-700);
   color: var(--skin-color);
   text-shadow: 0 0 10px rgb(171 131 90);
+  text-shadow: var(--text-shadow-10);
   padding: 8px 12px;
   /* border-radius: 6px; */
   font-weight: bold;
@@ -781,6 +789,7 @@ h3.my-profession {
   /* box-shadow: 0 0 20px rgba(48, 46, 77, 0.15); */
   transition: all 0.3s ease;
   text-shadow: 0 0 10px rgb(171 131 90);
+  text-shadow: var(--text-shadow-10);
   background-color: rgba(0, 0, 0, 0.069);
 }
 .certifications .certifications-item .certifications-item-inner:hover {
@@ -1050,6 +1059,8 @@ h3.my-profession {
 .contact .contact-info-item .icon .fa {
   font-size: 25px;
   color: var(--skin-color);
+  text-shadow: 0 0 10px rgb(171 131 90);
+  text-shadow: var(--text-shadow-10);
 }
 .contact .contact-info-item h4 {
   font-size: 18px;
