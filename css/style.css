@@ -194,6 +194,7 @@ ul.nav a {
   font-size: 30px;
   letter-spacing: 5px;
   position: relative;
+  text-shadow: 0 0 20px rgba(131, 130, 130, 0.892);
 }
 .aside .logo a span {
   font-family: "Funnel Display", sans-serif;
@@ -268,12 +269,10 @@ ul.nav a {
   border-bottom: 1px solid var(--bg-black-100);
 }
 
-.aside .nav li:hover {
-  /* transform: scale(1.1); */
-  border-bottom: 1px solid #56534de2;
+.aside .nav li a:hover {
+  /* border-bottom: 1px solid #56534de2; */
   color: var(--skin-color);
 }
-
 .aside .nav li a {
   font-size: 16px;
   font-weight: 600;
@@ -289,7 +288,8 @@ ul.nav a {
   color: var(--skin-color);
   /* border-bottom: 2px solid var(--skin-color); */
   /* color: #c7c2ba; */
-  border-bottom: 1px solid #837a6c;
+  /* border-bottom: 1px solid #837a6c; */
+  text-shadow: 0 0 10px rgba(148, 146, 146, 0.819);
 }
 
 .aside .nav li a i {
@@ -325,6 +325,7 @@ h3.hello span {
   font-weight: 600;
   font-size: 50px;
   color: var(--skin-color);
+  text-shadow: 0 0 20px rgba(131, 130, 130, 0.76);
 }
 h3.my-profession {
   font-size: 30px;
