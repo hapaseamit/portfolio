@@ -135,7 +135,7 @@ window.onload = function () {
       data.certifications.forEach((item) => {
         certifications.innerHTML += `
         <div class="certifications-item padd-15">
-          <div class="certifications-item-inner">
+          <div class="certifications-item-inner shadow-dark">
             <h2>${item.title}</h2>
             <h4 class="validity hidden"><i class="fa fa-calendar"></i> ${item.validity}</h4>
             <p>
