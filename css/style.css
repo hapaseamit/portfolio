@@ -48,6 +48,27 @@ body {
   filter: url(#grain);
   z-index: -1;
 } */
+.typed-cursor {
+  display: inline-block;
+  width: 1ch;
+  height: 1em;
+  background-color: currentColor;
+  vertical-align: middle;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
 .main-container {
   position: relative;
   height: auto;

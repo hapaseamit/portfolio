@@ -8,6 +8,7 @@ window.onload = function () {
         typeSpeed: 100,
         backSpeed: 60,
         loop: true,
+        cursorChar: "",
       });
 
       // About info on about page
