@@ -2,8 +2,13 @@
   "skills": [
     "Python",
     "Django REST API",
-    "Go REST API",
+    "Java",
+    "Spring Boot",
+    "Hibernate",
+    "Postman",
     "React.js",
+    "HTML",
+    "CSS",
     "JavaScript",
     "PostgreSQL",
     "MySQL",
@@ -13,15 +18,12 @@
     "Red Hat Linux",
     "Fedora",
     "Windows 11",
-    "Postman",
     "Apache Web Server",
     "Nginx",
     "Git",
     "GitHub",
     "GitLab",
     "VS Code",
-    "Vim",
-    "HTML",
-    "CSS"
+    "Vim"
   ]
 }
