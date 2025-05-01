@@ -143,7 +143,7 @@ window.onload = function () {
             }</h4>
             <p>
               <img
-                src=${encodeURIComponent(item.image)}
+                src=${encodeURIComponent(item.url)}
                 alt=""
                 width="100%"
               />
