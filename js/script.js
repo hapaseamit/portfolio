@@ -138,10 +138,12 @@ window.onload = function () {
         <div class="certifications-item padd-15">
           <div class="certifications-item-inner shadow-dark">
             <h2>${item.title}</h2>
-            <h4 class="validity hidden"><i class="fa fa-calendar"></i> ${item.validity}</h4>
+            <h4 class="validity hidden"><i class="fa fa-calendar"></i> ${
+              item.validity
+            }</h4>
             <p>
               <img
-                src=${item.url}
+                src=${encodeURIComponent(item.image)}
                 alt=""
                 width="100%"
               />
