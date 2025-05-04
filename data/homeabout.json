@@ -1,16 +1,16 @@
 {
   "name": "Amit Hapase",
-  "designation": "Full Stack Web Develoepr",
+  "designation": "Full Stack Web Developer",
   "typinglist": [
     "",
     "A Full Stack Developer",
-    "A Python Develoeper",
-    "A Java Develoeper",
-    "A REST API developer",
+    "A Python Developer",
+    "A Java Developer",
+    "A REST API Developer",
     "A React Developer"
   ],
   "bio": "Full Stack Web Developer with 3 months of experience in Python and Django RESTful APIs",
-  "detailedBio": "I am a Red Hat Certifed Engineer & System Adminitraor, skilled in configuring PostgreSQL on AWS RDS, setting up AWS S3 and Linux EC2 for storage and server solutions, and managing version control with Git. Experienced in testing APIs using Postman and proficient in React.js, Django REST API, JavaScript and Golang REST API. ",
+  "detailedBio": "I am a Red Hat Certified Engineer & System Administrator, skilled in configuring PostgreSQL on AWS RDS, setting up AWS S3 and Linux EC2 for storage and server solutions, and managing version control with Git. Experienced in testing APIs using Postman and proficient in React.js, Django REST API, JavaScript and Golang REST API. ",
   "birthday": "21<sup>st</sup> April 1990",
   "website": "www.hapase.com",
   "degree": "BCA",
