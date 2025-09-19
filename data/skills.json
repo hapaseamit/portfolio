@@ -15,17 +15,16 @@
     "AWS S3 Bucket",
     "Docker",
     "Apache Web Server",
+    "Nginx",
     "Red Hat Linux",
     "Git",
     "Postman",
     "Automation Testing",
+    "Tosca",
     "Manual Testing",
     "Functional Testing",
     "Selenium",
     "PostgreSQL",
-    "MySQL",
-    "Fedora",
-    "Windows 11",
-    "Nginx"
+    "MySQL"
   ]
 }
