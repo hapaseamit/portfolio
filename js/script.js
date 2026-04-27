@@ -56,7 +56,7 @@ window.onload = function () {
           });
         })
         .catch((error) =>
-          console.error("Error loading education data:", error)
+          console.error("Error loading education data:", error),
         );
       // About detailed info on about page
       const detailedBio = document.getElementById("abttxt");
@@ -157,17 +157,17 @@ window.onload = function () {
     .catch((error) => console.error("Error loading education data:", error));
 
   // Get experience data from experience files
-  const files = ["1.html"];
+  // const files = ["1.html"];
 
-  const experienceElement = document.getElementById("experience");
+  // const experienceElement = document.getElementById("experience");
 
-  Promise.all(
-    files.map((file) =>
-      fetch(`data/experience/${file}`).then((res) => res.text())
-    )
-  ).then((allData) => {
-    experienceElement.innerHTML = allData.join("");
-  });
+  // Promise.all(
+  //   files.map((file) =>
+  //     fetch(`data/experience/${file}`).then((res) => res.text()),
+  //   ),
+  // ).then((allData) => {
+  //   experienceElement.innerHTML = allData.join("");
+  // });
 };
 
 // smooth scroll navigation click animation
