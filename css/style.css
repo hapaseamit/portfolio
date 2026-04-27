@@ -450,7 +450,13 @@ h3.my-profession {
   font-size: 25px;
   color: #ffffff;
 }
-
+#modalImg {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 1px solid black;
+}
 /* home section social icons experiment end */
 
 /* About */
@@ -576,6 +582,7 @@ h3.my-profession {
   /* background-color: var(--bg-black-100); */
   background-color: rgba(0, 0, 0, 0.069);
   background: rgba(0, 0, 0, 0);
+  -webkit-backdrop-filter: blur(0.9px);
   backdrop-filter: blur(0.9px);
   padding: 30px 15px;
   border: 1px solid var(--bg-black-50);
@@ -626,6 +633,7 @@ h3.my-profession {
   margin-right: 5px;
 }
 .about .about-content .timeline .timeline-title {
+  margin: 0;
   font-weight: 700;
   font-size: 18px;
   margin-bottom: 15px;
@@ -657,6 +665,7 @@ h3.my-profession {
   /* background-color: var(--bg-black-100); */
   background-color: rgba(0, 0, 0, 0.069);
   background: rgba(0, 0, 0, 0);
+  -webkit-backdrop-filter: blur(0.9px);
   backdrop-filter: blur(0.9px);
   padding: 30px 15px;
   border: 1px solid var(--bg-black-50);
@@ -698,6 +707,7 @@ h3.my-profession {
   background-color: var(--skin-color);
 }
 .workexperience .workexperience-content .timeline .timeline-date {
+  margin: 0;
   font-weight: bold;
   font-size: 14px;
   margin-bottom: 12px;
@@ -743,6 +753,11 @@ h3.my-profession {
   color: var(--text-black-700);
   color: var(--skin-color);
 }
+.experience-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 /* Skills */
 
 .skills-section {
@@ -774,6 +789,7 @@ h3.my-profession {
   /* background-color: var(--bg-black-100); */
   background-color: rgba(0, 0, 0, 0.069);
   background: rgba(0, 0, 0, 0);
+  -webkit-backdrop-filter: blur(0.9px);
   backdrop-filter: blur(0.9px);
   /* border: 1px solid var(--skin-color); */
   border-radius: 10px;
@@ -823,6 +839,7 @@ h3.my-profession {
   text-shadow: var(--text-shadow-10);
   background-color: rgba(0, 0, 0, 0.069);
   background: rgba(0, 0, 0, 0);
+  -webkit-backdrop-filter: blur(0.9px);
   backdrop-filter: blur(0.9px);
 }
 .certifications .certifications-item .certifications-item-inner:hover {
