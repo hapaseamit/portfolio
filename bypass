@@ -1,27 +1,25 @@
 @echo off
 setlocal
 
-:: Get username from argument
-set USERNAME=%1
-
-:: Ask if empty
-if "%USERNAME%"=="" (
-    set /p USERNAME=Enter username:
-)
+echo.
+set /p USERNAME=Enter the local username you want to create: 
+set /p PCNAME=Enter the computer name: 
 
 echo.
-echo Using username: %USERNAME%
+echo Username: %USERNAME%
+echo PC Name: %PCNAME%
 echo.
 
 :: Download unattend.xml
 curl -L "https://raw.githubusercontent.com/hapaseamit/windowslocal/refs/heads/main/unattend.xml" -o "C:\Windows\Panther\unattend.xml"
 
-:: Replace only required username fields
-powershell -Command "(Get-Content 'C:\Windows\Panther\unattend.xml') ^
--replace '<ComputerName>HAPASE-PC</ComputerName>', ('<ComputerName>' + $env:USERNAME + '-PC</ComputerName>') ^
+:: Replace required values in XML
+powershell -Command ^
+"(Get-Content 'C:\Windows\Panther\unattend.xml') ^
+-replace '<ComputerName>HAPASE-PC</ComputerName>', ('<ComputerName>' + $env:PCNAME + '</ComputerName>') ^
 -replace '<Name>HAPASE</Name>', ('<Name>' + $env:USERNAME + '</Name>') ^
 -replace '<Username>HAPASE</Username>', ('<Username>' + $env:USERNAME + '</Username>') ^
 | Set-Content 'C:\Windows\Panther\unattend.xml'"
 
-:: Run sysprep
+:: Run Sysprep
 %WINDIR%\System32\Sysprep\Sysprep.exe /oobe /unattend:C:\Windows\Panther\unattend.xml /reboot
