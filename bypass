@@ -16,9 +16,9 @@ curl -L "https://raw.githubusercontent.com/hapaseamit/windowslocal/refs/heads/ma
 :: Replace required values in XML
 powershell -Command ^
 "(Get-Content 'C:\Windows\Panther\unattend.xml') ^
--replace '<ComputerName>HAPASE-PC</ComputerName>', ('<ComputerName>' + $env:PCNAME + '</ComputerName>') ^
--replace '<Name>HAPASE</Name>', ('<Name>' + $env:USERNAME + '</Name>') ^
--replace '<Username>HAPASE</Username>', ('<Username>' + $env:USERNAME + '</Username>') ^
+-replace '<ComputerName>Admin-PC</ComputerName>', ('<ComputerName>' + $env:PCNAME + '</ComputerName>') ^
+-replace '<Name>Admin</Name>', ('<Name>' + $env:USERNAME + '</Name>') ^
+-replace '<Username>Admin</Username>', ('<Username>' + $env:USERNAME + '</Username>') ^
 | Set-Content 'C:\Windows\Panther\unattend.xml'"
 
 :: Run Sysprep
