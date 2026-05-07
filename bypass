@@ -3,11 +3,9 @@ setlocal
 
 echo.
 set /p USERNAME=Enter the local username you want to create: 
-set /p PCNAME=Enter the computer name: 
 
 echo.
 echo Username: %USERNAME%
-echo PC Name: %PCNAME%
 echo.
 
 :: Download unattend.xml
@@ -16,7 +14,6 @@ curl -L "https://raw.githubusercontent.com/hapaseamit/windowslocal/refs/heads/ma
 :: Replace required values in XML
 powershell -Command ^
 "(Get-Content 'C:\Windows\Panther\unattend.xml') ^
--replace '<ComputerName>Admin-PC</ComputerName>', ('<ComputerName>' + $env:PCNAME + '</ComputerName>') ^
 -replace '<Name>Admin</Name>', ('<Name>' + $env:USERNAME + '</Name>') ^
 -replace '<Username>Admin</Username>', ('<Username>' + $env:USERNAME + '</Username>') ^
 | Set-Content 'C:\Windows\Panther\unattend.xml'"
