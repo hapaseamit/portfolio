@@ -4,6 +4,13 @@ setlocal
 echo.
 set /p USERNAME=Enter the local username you want to create: 
 
+if "%USERNAME%"=="" (
+    echo.
+    echo Username cannot be empty.
+    pause
+    exit /b
+)
+
 echo.
 echo Username: %USERNAME%
 echo.
@@ -13,9 +20,10 @@ curl -L "https://raw.githubusercontent.com/hapaseamit/windowslocal/refs/heads/ma
 
 :: Replace required values in XML
 powershell -Command ^
-"(Get-Content 'C:\Windows\Panther\unattend.xml') ^
--replace '<Name>Admin</Name>', ('<Name>' + $env:USERNAME + '</Name>') ^
--replace '<Username>Admin</Username>', ('<Username>' + $env:USERNAME + '</Username>') ^
+"$username='%USERNAME%'; ^
+(Get-Content 'C:\Windows\Panther\unattend.xml') ^
+-replace '<Name>Admin</Name>', ('<Name>' + $username + '</Name>') ^
+-replace '<Username>Admin</Username>', ('<Username>' + $username + '</Username>') ^
 | Set-Content 'C:\Windows\Panther\unattend.xml'"
 
 :: Run Sysprep
