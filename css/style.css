@@ -263,7 +263,6 @@ ul.nav a {
   margin-bottom: 20px;
   display: block;
   transition: all 0.2s ease;
-  border-bottom: 1px solid var(--bg-black-100);
 }
 
 .aside .nav li a:hover {
