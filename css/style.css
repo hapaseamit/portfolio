@@ -702,20 +702,29 @@ h3.my-profession {
   display: flex;
   justify-content: center;
 }
+
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Slightly increased gap for breathing room */
   list-style: none;
   padding: 0;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 900px; /* Increased from 800px to accommodate larger items */
 }
 
 .skills-grid li {
+  /* Flexbox calc to mimic a 3-column grid: (100% width - 2 gaps of 20px) / 3 */
+  flex: 0 0 calc((100% - 40px) / 3);
+  max-width: calc((100% - 40px) / 3);
+
+  /* Increased size properties */
+  padding: 16px 30px; /* Increased padding (was 10px 24px) */
+  font-size: 1.1rem; /* Make the text slightly larger */
+
+  /* Original styling preserved */
   color: var(--skin-color);
   text-shadow: var(--text-shadow-10);
-  padding: 10px 24px;
   font-weight: bold;
   transition: all 0.2s ease;
   background-color: rgba(0, 0, 0, 0.069);
@@ -724,7 +733,6 @@ h3.my-profession {
   border-radius: 10px;
   text-align: center;
   border: 3px solid transparent;
-  width: 100%;
 }
 
 .skills-grid li:hover {
@@ -1324,8 +1332,15 @@ h3.my-profession {
   }
 
   .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 15px; /* Slightly smaller gap on mobile */
+  }
+
+  .skills-grid li {
+    /* Switch to 2 columns on mobile: (100% width - 1 gap of 15px) / 2 */
+    flex: 0 0 calc((100% - 15px) / 2);
+    max-width: calc((100% - 15px) / 2);
+    padding: 12px 20px;
+    font-size: 1rem;
   }
 
   /* Certifications */
@@ -1416,10 +1431,10 @@ h3.my-profession {
     text-align: center;
   }
 
-  .skills-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
   .skills-grid li {
-    font-size: 13px;
+    /* Switch to 1 column on very small screens */
+    flex: 0 0 100%;
+    max-width: 100%;
+    font-size: 14px;
   }
 }
