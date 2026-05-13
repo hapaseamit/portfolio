@@ -88,7 +88,8 @@ ul.nav a {
 }
 
 .section {
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  min-height: unset;
   display: block;
   padding: 0 30px;
   opacity: 1;
