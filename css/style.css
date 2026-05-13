@@ -1198,6 +1198,11 @@ h3.my-profession {
   .section-title h2 {
     font-size: 32px;
   }
+  .skills-grid li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 /* Mobile Phones */
