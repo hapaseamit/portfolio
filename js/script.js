@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  // 1. Fetch all data simultaneously for better performance
   try {
     const [aboutRes, educationRes, skillsRes, certificationsRes] =
       await Promise.all([
@@ -9,15 +8,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         fetch("data/certifications.json"),
       ]);
 
-    // Parse the JSON responses
     const aboutData = await aboutRes.json();
     const educationData = await educationRes.json();
     const skillsData = await skillsRes.json();
     const certData = await certificationsRes.json();
 
-    // ==========================================
-    // 2. Populate Home, About, and Contact Info
-    // ==========================================
     new Typed(".typing", {
       strings: aboutData.typinglist,
       typeSpeed: 100,
@@ -76,9 +71,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       `;
     }
 
-    // ==========================================
-    // 3. Populate Education
-    // ==========================================
     const timeline = document.getElementById("education");
     if (timeline) {
       educationData.forEach((item) => {
@@ -94,9 +86,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
     }
 
-    // ==========================================
-    // 4. Populate Skills
-    // ==========================================
     const skillsContainer = document.getElementById("skill-list");
     if (skillsContainer) {
       skillsData.skills.forEach((item) => {
@@ -107,9 +96,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
     }
 
-    // ==========================================
-    // 5. Populate Certifications & Attach Modal
-    // ==========================================
     const certifications = document.getElementById("cert-list");
     if (certifications) {
       certData.certifications.forEach((item) => {
@@ -131,9 +117,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Error loading portfolio data:", error);
   }
 
-  // ==========================================
-  // 6. Smooth Scroll Navigation Setup
-  // ==========================================
   document.querySelectorAll(".nav a").forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
@@ -143,7 +126,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         .querySelectorAll(".nav a")
         .forEach((link) => link.classList.remove("active"));
 
-      // Add 'active' class to the clicked nav link
       this.classList.add("active");
 
       // Smooth scroll to the target section
@@ -159,11 +141,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 });
 
-// ==========================================
-// Helper Functions
-// ==========================================
-
-// Fixed global variable leak by adding 'const'
 const attachCertificationModalListeners = () => {
   const modal = document.getElementById("certificationModal");
   const modalTitle = document.getElementById("modalTitle");
