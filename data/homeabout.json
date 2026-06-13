@@ -1,15 +1,17 @@
 {
   "name": "Amit Hapase",
-  "designation": "Front End Developer & QA",
+  "designation": "Developer & Tester",
   "typinglist": [
     "",
-    "A React.js Developer",
     "An Automation Tester & Developer",
-    "A QA analyst",
+    "A Playwright Developer",
+    "A TypeScript Developer",
+    "A JavaScript Developer",
+    "A Java Developer",
     "A Linux SysAdmin"
   ],
-  "bio": "Web Developer & QA, proficient in React.js, Playwrite & Tosca Automation and Linux",
-  "detailedBio": "I am a Red Hat Certified Engineer & System Administrator, skilled in React.js, Tosca, JavaScript Playwrite and Linux",
+  "bio": "Developer & QA, proficient in Playwrite, TypeScript, JavaScript, Java, & Tosca & Linux",
+  "detailedBio": "I am a Red Hat Certified Engineer & System Administrator, skilled in Playwrite, TypeScript, JavaScript, Java, Tosca & Linux",
   "birthday": "21<sup>st</sup> April 1990",
   "website": "www.hapase.com",
   "degree": "BCA",

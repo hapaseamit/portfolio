@@ -1,6 +1,16 @@
 {
   "certifications": [
     {
+      "title": "Playwright with TypeScript",
+      "validity": "June 2026 - NA",
+      "url": "images/certificates/UC-4d644c48-ff14-431d-b1c4-9d4b3f39a66d.jpg"
+    },
+    {
+      "title": "Become a SQL Expert",
+      "validity": "June 2026 - NA",
+      "url": "images/certificates/UC-36fb5b40-7a64-410c-8e46-1db1bb91157c.jpg"
+    },
+    {
       "title": "RED HAT CERTIFIED SYSTEM ADMINISTRATOR",
       "validity": "Dec 2018 - Dec 2021",
       "url": "images/certificates/RHCSA.png"
@@ -9,11 +19,6 @@
       "title": "RED HAT CERTIFIED ENGINEER",
       "validity": "Dec 2019 - Dec 2022",
       "url": "images/certificates/RHCE.png"
-    },
-    {
-      "title": "REACT - THE COMPLETE GUIDE",
-      "validity": "Apr 2025 - NA",
-      "url": "images/certificates/Udemy-React.jpg"
     }
   ]
 }
