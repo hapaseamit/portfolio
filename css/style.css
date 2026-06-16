@@ -1108,6 +1108,7 @@ h3.my-profession {
     flex: 0 0 100%;
     max-width: 100%;
     text-align: center;
+    width: 50%;
   }
   .home .social {
     justify-content: center;
@@ -1464,7 +1465,8 @@ h3.my-profession {
   }
 
   .btn {
-    width: 100%;
+    min-width: 60%;
+    max-width: 60%;
     text-align: center;
   }
 
