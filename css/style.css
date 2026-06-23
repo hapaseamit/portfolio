@@ -79,11 +79,11 @@ body {
   box-sizing: border-box;
 }
 
-ul {
+/* table {
   list-style: none;
-}
+} */
 
-ul.nav a {
+table.nav a {
   font-family: "Poppins", sans-serif;
 }
 
@@ -289,30 +289,39 @@ ul.nav a {
   margin-top: 50px;
 }
 
-.aside .nav li {
-  margin-bottom: 20px;
-  display: block;
+.aside .nav i {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  /* display: block; */
+  transition: all 0.2s ease;
+}
+.aside .nav tr {
+  /* display: block; */
   transition: all 0.2s ease;
 }
 
-.aside .nav li a {
+.aside .nav tr i,
+.aside .nav tr td {
   font-size: 16px;
   font-weight: 600;
-  display: block;
+  /* display: block; */
   color: var(--text-black-900);
   text-shadow: var(--text-shadow-10);
   padding: 5px 15px;
   transition: all 0.2s ease;
+  padding-left: 0px;
 }
 
-.aside .nav li a:hover,
-.aside .nav li a.active {
+.aside table tr:hover i,
+.aside table tr:hover td,
+.aside table tr.active i,
+.aside table tr.active td {
   color: var(--skin-color);
   text-shadow: var(--text-shadow-20);
 }
 
-.aside .nav li a i {
-  margin-right: 15px;
+.aside .nav tr {
+  cursor: pointer;
 }
 
 .main-content {

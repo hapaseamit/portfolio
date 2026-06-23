@@ -117,20 +117,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Error loading portfolio data:", error);
   }
 
-  document.querySelectorAll(".nav a").forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-
+  document.querySelectorAll(".nav tr").forEach((row) => {
+    row.addEventListener("click", function (e) {
       // Remove 'active' class from all nav links
       document
-        .querySelectorAll(".nav a")
-        .forEach((link) => link.classList.remove("active"));
+        .querySelectorAll(".nav tr")
+        .forEach((tr) => tr.classList.remove("active"));
 
       this.classList.add("active");
 
-      // Smooth scroll to the target section
-      const targetId = this.getAttribute("href");
+      const targetId = this.dataset.target;
       const targetElement = document.querySelector(targetId);
+      // Smooth scroll to the target section
       if (targetElement) {
         targetElement.scrollIntoView({
           behavior: "smooth",
