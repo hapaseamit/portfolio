@@ -21,7 +21,18 @@ document.addEventListener("DOMContentLoaded", async () => {
       cursorChar: "",
     });
 
+    const fullName = document.getElementById("full-name");
+    if (fullName) {
+      fullName.innerHTML = aboutData.name;
+    }
+
+    const designationTitle = document.getElementById("designation-title");
+    if (designationTitle) {
+      designationTitle.innerHTML = aboutData.designation;
+    }
+
     const aboutinfo = document.getElementById("aboutinfo");
+
     if (aboutinfo) {
       aboutinfo.innerHTML = `
         <div class="info-item padd-15">
