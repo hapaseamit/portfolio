@@ -21,6 +21,12 @@ document.addEventListener("DOMContentLoaded", async () => {
       cursorChar: "",
     });
 
+    const downloadCvButtons = document.querySelectorAll(".download-cv");
+
+    downloadCvButtons.forEach((btn) => {
+      btn.href = aboutData.cv;
+    });
+
     const fullName = document.getElementById("full-name");
     if (fullName) {
       fullName.innerHTML = aboutData.name;

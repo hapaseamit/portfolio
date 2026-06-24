@@ -1474,8 +1474,8 @@ h3.my-profession {
   }
 
   .btn {
-    min-width: 60%;
-    max-width: 60%;
+    min-width: 100%;
+    max-width: 100%;
     text-align: center;
   }
 
