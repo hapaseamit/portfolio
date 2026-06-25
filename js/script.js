@@ -13,13 +13,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     const skillsData = await skillsRes.json();
     const certData = await certificationsRes.json();
 
-    new Typed(".typing", {
-      strings: aboutData.typinglist,
-      typeSpeed: 100,
-      backSpeed: 60,
-      loop: true,
-      cursorChar: "",
-    });
+    // new Typed(".typing", {
+    //   strings: aboutData.typinglist,
+    //   typeSpeed: 100,
+    //   backSpeed: 60,
+    //   loop: true,
+    //   cursorChar: "",
+    // });
 
     const downloadCvButtons = document.querySelectorAll(".download-cv");
 
