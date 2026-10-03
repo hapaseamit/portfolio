@@ -223,6 +223,44 @@
         border-radius: 50%;
       }
 
+      /* Simple magical cursor sparkles */
+      .magic-spark {
+        position: fixed;
+        width: 3px;
+        height: 3px;
+        pointer-events: none;
+        z-index: 9999;
+        border-radius: 50%;
+        background: white;
+        box-shadow:
+          0 0 5px rgba(255, 255, 255, 1),
+          0 0 11px rgba(190, 210, 255, 0.95),
+          0 0 19px rgba(139, 92, 246, 0.7);
+        animation: magicSpark 850ms ease-out forwards;
+        will-change: transform, opacity;
+      }
+
+      @keyframes magicSpark {
+        0% {
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(0.2);
+        }
+        12% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy)))
+            scale(0);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .magic-spark {
+          display: none !important;
+        }
+      }
+
       /* Responsive layout */
       @media (max-width: 600px) {
         .container {
@@ -344,6 +382,105 @@
 
           title.style.transform = `translate(${x}px, ${y}px)`;
         });
+      }
+
+      // Continuous magical sparkling trail.
+      // Sparkles keep appearing even when the pointer is stationary.
+      if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let previousX = mouseX;
+        let previousY = mouseY;
+
+        let moveX = 0;
+        let moveY = -1;
+        let lastSpark = 0;
+        let lastMoveTime = 0;
+
+        document.addEventListener("mousemove", (event) => {
+          mouseX = event.clientX;
+          mouseY = event.clientY;
+
+          const dx = mouseX - previousX;
+          const dy = mouseY - previousY;
+          const distance = Math.hypot(dx, dy);
+
+          if (distance > 1.2) {
+            moveX = dx / distance;
+            moveY = dy / distance;
+            previousX = mouseX;
+            previousY = mouseY;
+            lastMoveTime = performance.now();
+          }
+        });
+
+        function emitSpark() {
+          const now = performance.now();
+
+          // Dense continuous sparkle stream.
+          // It remains active at rest and becomes even denser while moving.
+          const moving = now - lastMoveTime < 100;
+          const interval = moving ? 10 : 18;
+
+          if (now - lastSpark >= interval) {
+            // Emit 1–2 sparks per cycle for a fuller trail.
+            const count = moving
+              ? Math.random() < 0.65
+                ? 2
+                : 1
+              : Math.random() < 0.35
+                ? 2
+                : 1;
+
+            for (let i = 0; i < count; i++) {
+              const spark = document.createElement("span");
+              spark.className = "magic-spark";
+
+              // Keep stationary sparkles close to the pointer.
+              // When moving, place them slightly behind it.
+              const behind = moving
+                ? 2 + Math.random() * 10
+                : Math.random() * 6;
+
+              const side = (Math.random() - 0.5) * 16;
+
+              spark.style.left = mouseX - moveX * behind + -moveY * side + "px";
+              spark.style.top = mouseY - moveY * behind + moveX * side + "px";
+
+              // Drift backward along the same movement direction.
+              const travel = moving
+                ? 14 + Math.random() * 34
+                : 4 + Math.random() * 14;
+
+              const sideways = (Math.random() - 0.5) * (moving ? 14 : 20);
+
+              spark.style.setProperty(
+                "--dx",
+                -moveX * travel + -moveY * sideways + "px",
+              );
+              spark.style.setProperty(
+                "--dy",
+                -moveY * travel + moveX * sideways + "px",
+              );
+
+              const size = 1.5 + Math.random() * 3.8;
+              spark.style.width = size + "px";
+              spark.style.height = size + "px";
+
+              // Slightly vary sparkle brightness through opacity.
+              spark.style.opacity = 0.65 + Math.random() * 0.35;
+
+              document.body.appendChild(spark);
+              spark.addEventListener("animationend", () => spark.remove());
+            }
+
+            lastSpark = now;
+          }
+
+          requestAnimationFrame(emitSpark);
+        }
+
+        emitSpark();
       }
     </script>
   </body>
