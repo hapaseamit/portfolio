@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; connect-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; media-src *; img-src 'self' data: https://*; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net 'unsafe-inline' 'unsafe-eval'; script-src-elem 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net 'unsafe-inline' 'unsafe-eval'; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com;"
+    />
+
+    <title>Portfolio</title>
+    <!-- ===== CSS Files Starts ===== -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <!-- ===== CSS Files Ends ===== -->
+  </head>
+  <body>
+    <!-- SVG Filter Definition Starts -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+      <filter id="grain">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.5"
+          numOctaves="3"
+          stitchTiles="stitch"
+        />
+        <feColorMatrix type="saturate" values="0" />
+        <feColorMatrix
+          type="matrix"
+          values="
+          0 0 0 0 0.6
+          0 0 0 0 0.8 
+          0 0 0 0 0.9
+          0 0 0 0.2 0"
+        />
+      </filter>
+    </svg>
+    <!-- SVG Filter Definition Ends -->
+    <!-- Main Container Start -->
+    <div class="main-container">
+      <!-- Aside Start -->
+      <div class="aside">
+        <div class="logo">
+          <a href="#"> Hapase </a>
+        </div>
+        <div class="nav-toggler">
+          <span></span>
+        </div>
+        <table class="nav">
+          <tr class="active" data-target="#home">
+            <td>
+              <i class="fa fa-home"></i>
+            </td>
+            <td>Home</td>
+          </tr>
+          <tr data-target="#about">
+            <td>
+              <i class="fa fa-user"></i>
+            </td>
+            <td>About</td>
+          </tr>
+          <tr data-target="#skills">
+            <td>
+              <i class="fa fa-cogs"></i>
+            </td>
+            <td>Technical Skills</td>
+          </tr>
+          <tr data-target="#certifications">
+            <td>
+              <i class="fa fa-certificate"></i>
+            </td>
+            <td>Certifications</td>
+          </tr>
+          <tr data-target="#contact">
+            <td>
+              <i class="fa fa-envelope"></i>
+            </td>
+            <td>Contact</td>
+          </tr>
+        </table>
+      </div>
+      <!-- Aside End -->
+      <!-- Main Content Start-->
+      <div class="main-content">
+        <!-- Home Section Start -->
+        <section class="home section" id="home">
+          <div class="container">
+            <div class="row">
+              <div class="home-info padd-15" id="homeabout">
+                <h3 class="hello">
+                  Hello, myself &nbsp;<span class="name" id="full-name"></span>
+                </h3>
+                <!-- <h3 class="my-profession">
+                  I'm <span class="typing">A </span>
+                </h3> -->
+                <p id="designation-title"></p>
+                <div class="buttons">
+                  <a href="#" class="btn download-cv" download>Download CV</a>
+                </div>
+                <div class="social">
+                  <div class="social-link">
+                    <div class="icon">
+                      <a
+                        href="https://github.com/hapaseamit"
+                        target="_blank"
+                        aria-label="GitHub profile"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="fab fa-github"></i>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="social-link">
+                    <div class="icon">
+                      <a
+                        href="https://www.linkedin.com/in/hapase/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Linkedin profile"
+                      >
+                        <i class="fab fa-linkedin"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="home-img padd-15">
+                <img src="images/photo.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Home Section End -->
+        <!-- About Section Start -->
+        <section class="about section" id="about">
+          <div class="container">
+            <div class="row">
+              <div class="section-title padd-15">
+                <h2>About Me &nbsp;&nbsp;<i class="fa fa-user"></i></h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="about-content padd-15">
+                <div class="row">
+                  <div class="about-text padd-15" id="abttxt"></div>
+                </div>
+                <div class="row">
+                  <div class="personal-info padd-15">
+                    <div class="row" id="aboutinfo">
+                      <!-- Here data is loaded dynamically -->
+                    </div>
+                    <div class="row">
+                      <div class="buttons padd-15">
+                        <a class="btn download-cv" href="#" download
+                          >Download CV</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="skills padd-15"> -->
+                  <div class="skills padd-15">
+                    <div class="row">
+                      <div class="education padd-15">
+                        <h3 class="title">Education</h3>
+                        <div class="row">
+                          <div class="timeline shadow-dark" id="education">
+                            <!-- Timeline items will be inserted here by JavaScript -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- About Section End -->
+        <!-- Technicall Skills Section Start -->
+        <section class="skills section" id="skills">
+          <div class="container">
+            <div class="row">
+              <div class="section-title padd-15">
+                <h2>Technical Skills &nbsp;&nbsp;<i class="fa fa-cogs"></i></h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="skills-content padd-15">
+                <div class="skills">
+                  <ul class="skills-grid" id="skill-list"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Technical Skill Section End -->
+        <!-- Certifications Section Start -->
+        <section class="certifications section" id="certifications">
+          <div class="container">
+            <div class="row">
+              <div class="section-title padd-15">
+                <h2>
+                  Certifications &nbsp;&nbsp;<i class="fa fa-certificate"></i>
+                </h2>
+              </div>
+            </div>
+            <div class="row" id="cert-list"></div>
+          </div>
+        </section>
+        <!-- Certifications Section End -->
+        <!-- Contact Section Start -->
+        <section class="contact section" id="contact">
+          <div class="container">
+            <div class="row">
+              <div class="section-title padd-15">
+                <h2>Contact Me &nbsp;&nbsp;<i class="fa fa-envelope"></i></h2>
+              </div>
+            </div>
+            <h3 class="contact-title padd-15">Have You Any Questions?</h3>
+            <h4 class="contact-sub-title padd-15">I'm At Your Services</h4>
+            <div class="row" id="contactinfo">
+              <!-- Data will be added here dynamically-->
+            </div>
+            <h3 class="contact-title padd-15 hidden">SEND ME AN EMAIL</h3>
+            <h4 class="contact-sub-title padd-15 hidden">
+              I'M VERY RESPONSIVE TO MESSAGES
+            </h4>
+          </div>
+        </section>
+        <!-- Contact Section End -->
+      </div>
+      <!-- Main Content End-->
+    </div>
+    <!-- Main Container End -->
+    <!-- Modal Structure starts -->
+    <div id="certificationModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <img id="modalImg" src="" alt="Certification Image" />
+        <h4 id="modalDescription"></h4>
+      </div>
+    </div>
+    <!-- Modal Structure ends -->
+    <!-- ===== JS Files ======= -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="js/script.js" defer></script>
+  </body>
+</html>

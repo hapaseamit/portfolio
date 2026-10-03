@@ -2,253 +2,349 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; connect-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; media-src *; img-src 'self' data: https://*; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net 'unsafe-inline' 'unsafe-eval'; script-src-elem 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net 'unsafe-inline' 'unsafe-eval'; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com;"
-    />
 
-    <title>Portfolio</title>
-    <!-- ===== CSS Files Starts ===== -->
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
-    <link rel="icon" type="image/png" href="images/favicon.png" />
-    <!-- ===== CSS Files Ends ===== -->
+    <title>HAPASE</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        overflow: hidden;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #050510;
+        color: white;
+      }
+
+      /* Animated background */
+      .background {
+        position: fixed;
+        inset: 0;
+        background:
+          radial-gradient(circle at 20% 30%, #32106f 0%, transparent 35%),
+          radial-gradient(circle at 80% 70%, #063c70 0%, transparent 35%),
+          linear-gradient(135deg, #050510, #0b0920, #050510);
+        animation: backgroundMove 10s ease-in-out infinite alternate;
+      }
+
+      @keyframes backgroundMove {
+        0% {
+          transform: scale(1);
+          filter: hue-rotate(0deg);
+        }
+
+        100% {
+          transform: scale(1.08);
+          filter: hue-rotate(25deg);
+        }
+      }
+
+      /* Grid */
+      .grid {
+        position: fixed;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+          );
+        background-size: 50px 50px;
+        mask-image: radial-gradient(circle, black 30%, transparent 80%);
+      }
+
+      /* Center content */
+      .container {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 5;
+      }
+
+      .content {
+        width: min(100%, 100vw);
+        padding-inline: clamp(16px, 5vw, 48px);
+        text-align: center;
+      }
+
+      .title {
+        font-size: clamp(3.5rem, 14vw, 11.875rem);
+        font-weight: 900;
+        letter-spacing: 0.08em;
+
+        background: linear-gradient(90deg, #ffffff, #a78bfa, #38bdf8, #ffffff);
+
+        background-size: 300% auto;
+
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+
+        animation:
+          gradient 5s linear infinite,
+          floating 4s ease-in-out infinite;
+
+        text-shadow:
+          0 0 20px rgba(139, 92, 246, 0.4),
+          0 0 60px rgba(56, 189, 248, 0.2);
+      }
+
+      @keyframes gradient {
+        to {
+          background-position: 300% center;
+        }
+      }
+
+      @keyframes floating {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-12px);
+        }
+      }
+
+      .subtitle {
+        margin-top: 20px;
+        font-size: clamp(0.625rem, 1.5vw, 0.875rem);
+        letter-spacing: clamp(2px, 0.7vw, 7px);
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.55);
+        animation: fadeIn 2s ease forwards;
+        max-width: 90vw;
+        overflow-wrap: anywhere;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Glowing orb */
+      .orb {
+        position: absolute;
+        width: clamp(160px, 28vw, 280px);
+        height: clamp(160px, 28vw, 280px);
+        border-radius: 50%;
+
+        background: radial-gradient(
+          circle,
+          rgba(139, 92, 246, 0.25),
+          transparent 70%
+        );
+
+        filter: blur(20px);
+        animation: orbMove 8s ease-in-out infinite;
+      }
+
+      .orb.one {
+        top: 10%;
+        left: 10%;
+      }
+
+      .orb.two {
+        bottom: 5%;
+        right: 10%;
+        animation-delay: -4s;
+      }
+
+      @keyframes orbMove {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+
+        50% {
+          transform: translate(50px, -40px) scale(1.3);
+        }
+      }
+
+      /* Particles */
+      .particle {
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: white;
+        box-shadow: 0 0 10px white;
+        animation: particleMove linear infinite;
+      }
+
+      @keyframes particleMove {
+        from {
+          transform: translateY(110vh);
+          opacity: 0;
+        }
+
+        20% {
+          opacity: 1;
+        }
+
+        80% {
+          opacity: 1;
+        }
+
+        to {
+          transform: translateY(-10vh);
+          opacity: 0;
+        }
+      }
+
+      /* Bottom glow */
+      .bottom-glow {
+        position: fixed;
+        bottom: -250px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: min(700px, 100vw);
+        height: min(400px, 55vw);
+
+        background: #6d28d9;
+        opacity: 0.15;
+        filter: blur(100px);
+        border-radius: 50%;
+      }
+
+      /* Responsive layout */
+      @media (max-width: 600px) {
+        .container {
+          min-height: 100svh;
+          padding-inline: 12px;
+        }
+
+        .content {
+          padding-inline: 8px;
+        }
+
+        .title {
+          font-size: clamp(3rem, 18vw, 5rem);
+          letter-spacing: 0.025em;
+          line-height: 0.95;
+          overflow-wrap: anywhere;
+        }
+
+        .subtitle {
+          margin-top: 14px;
+          font-size: clamp(0.55rem, 2.5vw, 0.75rem);
+          letter-spacing: clamp(2px, 1.2vw, 4px);
+          line-height: 1.4;
+        }
+
+        .grid {
+          background-size: 32px 32px;
+        }
+
+        .orb.one {
+          top: 5%;
+          left: -15%;
+        }
+
+        .orb.two {
+          bottom: 0;
+          right: -15%;
+        }
+
+        .bottom-glow {
+          bottom: -180px;
+          height: 300px;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .title {
+          font-size: clamp(2.7rem, 17vw, 4.25rem);
+        }
+
+        .content {
+          padding-inline: 4px;
+        }
+      }
+
+      @media (min-width: 601px) and (max-width: 1024px) {
+        .title {
+          font-size: clamp(5rem, 15vw, 9rem);
+        }
+
+        .content {
+          padding-inline: 24px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
   </head>
+
   <body>
-    <!-- SVG Filter Definition Starts -->
-    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
-      <filter id="grain">
-        <feTurbulence
-          type="fractalNoise"
-          baseFrequency="0.5"
-          numOctaves="3"
-          stitchTiles="stitch"
-        />
-        <feColorMatrix type="saturate" values="0" />
-        <feColorMatrix
-          type="matrix"
-          values="
-          0 0 0 0 0.6
-          0 0 0 0 0.8 
-          0 0 0 0 0.9
-          0 0 0 0.2 0"
-        />
-      </filter>
-    </svg>
-    <!-- SVG Filter Definition Ends -->
-    <!-- Main Container Start -->
-    <div class="main-container">
-      <!-- Aside Start -->
-      <div class="aside">
-        <div class="logo">
-          <a href="#"> Hapase </a>
-        </div>
-        <div class="nav-toggler">
-          <span></span>
-        </div>
-        <table class="nav">
-          <tr class="active" data-target="#home">
-            <td>
-              <i class="fa fa-home"></i>
-            </td>
-            <td>Home</td>
-          </tr>
-          <tr data-target="#about">
-            <td>
-              <i class="fa fa-user"></i>
-            </td>
-            <td>About</td>
-          </tr>
-          <tr data-target="#skills">
-            <td>
-              <i class="fa fa-cogs"></i>
-            </td>
-            <td>Technical Skills</td>
-          </tr>
-          <tr data-target="#certifications">
-            <td>
-              <i class="fa fa-certificate"></i>
-            </td>
-            <td>Certifications</td>
-          </tr>
-          <tr data-target="#contact">
-            <td>
-              <i class="fa fa-envelope"></i>
-            </td>
-            <td>Contact</td>
-          </tr>
-        </table>
-      </div>
-      <!-- Aside End -->
-      <!-- Main Content Start-->
-      <div class="main-content">
-        <!-- Home Section Start -->
-        <section class="home section" id="home">
-          <div class="container">
-            <div class="row">
-              <div class="home-info padd-15" id="homeabout">
-                <h3 class="hello">
-                  Hello, myself &nbsp;<span class="name" id="full-name"></span>
-                </h3>
-                <!-- <h3 class="my-profession">
-                  I'm <span class="typing">A </span>
-                </h3> -->
-                <p id="designation-title"></p>
-                <div class="buttons">
-                  <a href="#" class="btn download-cv" download>Download CV</a>
-                </div>
-                <div class="social">
-                  <div class="social-link">
-                    <div class="icon">
-                      <a
-                        href="https://github.com/hapaseamit"
-                        target="_blank"
-                        aria-label="GitHub profile"
-                        rel="noopener noreferrer"
-                      >
-                        <i class="fab fa-github"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="social-link">
-                    <div class="icon">
-                      <a
-                        href="https://www.linkedin.com/in/hapase/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Linkedin profile"
-                      >
-                        <i class="fab fa-linkedin"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="home-img padd-15">
-                <img src="images/photo.jpg" alt="" />
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Home Section End -->
-        <!-- About Section Start -->
-        <section class="about section" id="about">
-          <div class="container">
-            <div class="row">
-              <div class="section-title padd-15">
-                <h2>About Me &nbsp;&nbsp;<i class="fa fa-user"></i></h2>
-              </div>
-            </div>
-            <div class="row">
-              <div class="about-content padd-15">
-                <div class="row">
-                  <div class="about-text padd-15" id="abttxt"></div>
-                </div>
-                <div class="row">
-                  <div class="personal-info padd-15">
-                    <div class="row" id="aboutinfo">
-                      <!-- Here data is loaded dynamically -->
-                    </div>
-                    <div class="row">
-                      <div class="buttons padd-15">
-                        <a class="btn download-cv" href="#" download
-                          >Download CV</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <!-- <div class="skills padd-15"> -->
-                  <div class="skills padd-15">
-                    <div class="row">
-                      <div class="education padd-15">
-                        <h3 class="title">Education</h3>
-                        <div class="row">
-                          <div class="timeline shadow-dark" id="education">
-                            <!-- Timeline items will be inserted here by JavaScript -->
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- About Section End -->
-        <!-- Technicall Skills Section Start -->
-        <section class="skills section" id="skills">
-          <div class="container">
-            <div class="row">
-              <div class="section-title padd-15">
-                <h2>Technical Skills &nbsp;&nbsp;<i class="fa fa-cogs"></i></h2>
-              </div>
-            </div>
-            <div class="row">
-              <div class="skills-content padd-15">
-                <div class="skills">
-                  <ul class="skills-grid" id="skill-list"></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Technical Skill Section End -->
-        <!-- Certifications Section Start -->
-        <section class="certifications section" id="certifications">
-          <div class="container">
-            <div class="row">
-              <div class="section-title padd-15">
-                <h2>
-                  Certifications &nbsp;&nbsp;<i class="fa fa-certificate"></i>
-                </h2>
-              </div>
-            </div>
-            <div class="row" id="cert-list"></div>
-          </div>
-        </section>
-        <!-- Certifications Section End -->
-        <!-- Contact Section Start -->
-        <section class="contact section" id="contact">
-          <div class="container">
-            <div class="row">
-              <div class="section-title padd-15">
-                <h2>Contact Me &nbsp;&nbsp;<i class="fa fa-envelope"></i></h2>
-              </div>
-            </div>
-            <h3 class="contact-title padd-15">Have You Any Questions?</h3>
-            <h4 class="contact-sub-title padd-15">I'm At Your Services</h4>
-            <div class="row" id="contactinfo">
-              <!-- Data will be added here dynamically-->
-            </div>
-            <h3 class="contact-title padd-15 hidden">SEND ME AN EMAIL</h3>
-            <h4 class="contact-sub-title padd-15 hidden">
-              I'M VERY RESPONSIVE TO MESSAGES
-            </h4>
-          </div>
-        </section>
-        <!-- Contact Section End -->
-      </div>
-      <!-- Main Content End-->
-    </div>
-    <!-- Main Container End -->
-    <!-- Modal Structure starts -->
-    <div id="certificationModal" class="modal">
-      <div class="modal-content">
-        <span class="close" id="closeModal">&times;</span>
-        <h2 id="modalTitle"></h2>
-        <img id="modalImg" src="" alt="Certification Image" />
-        <h4 id="modalDescription"></h4>
+    <div class="background"></div>
+    <div class="grid"></div>
+
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+
+    <div class="bottom-glow"></div>
+
+    <div class="container">
+      <div class="content">
+        <h1 class="title">HAPASE</h1>
       </div>
     </div>
-    <!-- Modal Structure ends -->
-    <!-- ===== JS Files ======= -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="js/script.js" defer></script>
+
+    <script>
+      // Generate floating particles
+      const particleCount = 80;
+
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement("div");
+
+        particle.classList.add("particle");
+
+        particle.style.left = Math.random() * 100 + "%";
+        particle.style.animationDuration = 5 + Math.random() * 10 + "s";
+
+        particle.style.animationDelay = Math.random() * 10 + "s";
+
+        particle.style.opacity = 0.2 + Math.random() * 0.8;
+
+        document.body.appendChild(particle);
+      }
+
+      // Slight mouse movement effect (desktop/pointer devices only)
+      if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+        const title = document.querySelector(".title");
+
+        document.addEventListener("mousemove", (event) => {
+          const x = (event.clientX / window.innerWidth - 0.5) * 20;
+          const y = (event.clientY / window.innerHeight - 0.5) * 20;
+
+          title.style.transform = `translate(${x}px, ${y}px)`;
+        });
+      }
+    </script>
   </body>
 </html>
